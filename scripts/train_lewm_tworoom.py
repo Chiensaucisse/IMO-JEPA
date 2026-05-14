@@ -20,6 +20,7 @@ def main():
         save_dir='./experiments/checkpoints',
         log_dir='./experiments/lewm/tb',
         run_name='lewm_tworoom',
+        checkpoint_path="/home/noe/MVA/stable-worldmodel/experiments/checkpoints/lewm_tworoom_wotgt.pth"
     )
     
     
