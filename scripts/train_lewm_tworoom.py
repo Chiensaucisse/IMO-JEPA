@@ -6,7 +6,7 @@ def main():
     
     cfg = LeWMConfig(
 
-        dataset_name='./datasets/datasets/tworoom_10000.lance',
+        dataset_name='/home/noe/MVA/stable-worldmodel/datasets/datasets/tworoom_10000.lance',
         
 
         batch_size=16,
@@ -20,7 +20,7 @@ def main():
         save_dir='./experiments/checkpoints',
         log_dir='./experiments/lewm/tb',
         run_name='lewm_tworoom',
-        checkpoint_path="/home/noe/MVA/stable-worldmodel/experiments/checkpoints/lewm_tworoom_wotgt.pth"
+        checkpoint_path=None
     )
     
     

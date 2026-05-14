@@ -24,7 +24,7 @@ setup(
         'pillow>=8.3.0',
         'einops>=0.6.0',
         'transformers>=4.20.0',
-        'stable-worldmodel>=0.1.0',
+        'stable-worldmodel>=0.0.2',
     ],
     extras_require={
         'dev': [

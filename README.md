@@ -16,10 +16,42 @@ A PyTorch implementation of **DITTO** — a policy learning method that combines
 
 ## Installation
 
+### Option 1: Using `uv` (Recommended)
+
+Fast and modern Python package manager:
+
 ```bash
 # Clone repository
 git clone https://github.com/Chiensaucisse/DITTO-JEPA
 cd ditto-jepa
+
+# Install in development mode with uv
+uv pip install -e .
+
+# Or install with dev dependencies
+uv pip install -e ".[dev]"
+```
+
+### Option 2: Using `pip`
+
+```bash
+# Clone repository
+git clone https://github.com/Chiensaucisse/DITTO-JEPA
+cd ditto-jepa
+
+# Install in development mode
+pip install -e .
+
+# Or install from requirements.txt
+pip install -r requirements.txt
+```
+
+### Option 3: Using Conda
+
+```bash
+# Create environment
+conda create -n ditto python=3.10
+conda activate ditto
 
 # Install dependencies
 pip install -r requirements.txt
@@ -29,40 +61,44 @@ pip install -r requirements.txt
 
 ### 1. Collect Data 
 
-If you want to collect your own dataset:
+If you want to collect your own dataset using `uv`:
 
 ```bash
 # Collect 100 trajectories 
-python scripts/data/collect_custom.py --num-traj 100
+uv run scripts/data/collect_custom.py --num-traj 100
 
 # Collect with custom parameters
-python scripts/data/collect_custom.py \
+uv run scripts/data/collect_custom.py \
   --num-traj 1000 \
   --cache-dir ./datasets \
   --num-envs 20 \
   --action-noise 1.5
-
 ```
 
-### 3. Train World Model 
+Or with `pip` (if installed):
+```bash
+python scripts/data/collect_custom.py --num-traj 100
+```
+
+### 2. Train World Model 
 
 If you need a world model checkpoint, train LeWM:
 ```bash
-python examples/train_lewm_tworoom.py
+uv run examples/train_lewm_tworoom.py
 ```
 
 Or use a pre-trained checkpoint.
 
-### 4. Train DITTO Policy
+### 3. Train DITTO Policy
 
 ```bash
-python examples/train_ditto_tworoom.py
+uv run examples/train_ditto_tworoom.py
 ```
 
-### 5. Evaluate Policy
+### 4. Evaluate Policy
 
 ```bash
-python examples/eval_pretrained.py \
+uv run examples/eval_pretrained.py \
   --checkpoint ./checkpoints/ditto_tworoom_100_ditto_0.pth \
   --num-evals 10
 ```

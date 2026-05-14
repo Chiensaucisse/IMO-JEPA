@@ -4,7 +4,7 @@ from .models import (
     MLP,
     Pixelencoder,
     PixelBCActor,
-    TanhGaussianActor,
+    GaussianActor,
     Critic,
 )
 from .interfaces import LeWMInterface
@@ -23,7 +23,7 @@ __all__ = [
     'MLP',
     'Pixelencoder',
     'PixelBCActor',
-    'TanhGaussianActor',
+    'GaussianActor',
     'Critic',
     # Interfaces
     'LeWMInterface',

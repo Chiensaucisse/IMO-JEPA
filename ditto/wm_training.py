@@ -434,7 +434,7 @@ def train_lewm(cfg: LeWMConfig = None):
 
 if __name__ == '__main__':
     cfg = LeWMConfig(
-        dataset_name='./datasets/datasets/tworoom_10000.lance',
+        dataset_name='./data/datasets/tworoom_100.lance',
         batch_size=16,
         epochs=20,
         sigreg_weight=0.1,
