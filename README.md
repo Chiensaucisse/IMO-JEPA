@@ -132,7 +132,7 @@ Success rates comparison across three training methods with 3 different random s
 
 Example of agent navigation in the TwoRoom environment:
 
-<video src="results/ditto.mp4" width="224" controls></video>
+![DITTO Training](results/ditto.gif)
 
 ## Code Organization
 
