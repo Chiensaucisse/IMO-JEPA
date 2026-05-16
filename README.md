@@ -118,7 +118,21 @@ uv run examples/eval_pretrained.py \
 
 ## Results
 
-To be add
+### Benchmark Comparison (TwoRoom, 50 eval episodes)
+
+Success rates comparison across three training methods with 3 different random seeds:
+
+![Success Rate Comparison](results/success_rate.png)
+
+- **bc_pixels**: 24% ± 2% - Learning directly from pixels
+- **bc_latent**: 37% ± 2% - Behavioral cloning in latent space  
+- **ditto**: 56% ± 2% - DITTO with actor-critic and world model imagination
+
+### Training Visualization
+
+Example of agent navigation in the TwoRoom environment:
+
+![DITTO Training](results/ditto.gif)
 
 ## Code Organization
 

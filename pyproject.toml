@@ -52,6 +52,7 @@ dependencies = [
   "opencv-python>=4.13.0.92",
   "torch",
   "torchvision",
+  "matplotlib>=3.10.9",
 ]
 
 [project.urls]

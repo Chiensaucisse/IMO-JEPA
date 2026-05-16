@@ -9,7 +9,7 @@ from tqdm import tqdm
 
 import stable_worldmodel as swm
 
-from .models import TanhGaussianActor, Critic, PixelBCActor
+from .models import GaussianActor, Critic, PixelBCActor
 from .interfaces import LeWMInterface
 from .training import train_step_bc, train_step_bc_pixels, train_step
 from .evaluation import eval_in_env
@@ -117,7 +117,7 @@ def build_world_model(cfg: DittoConfig, action_dim: int, device):
     wm = build_lewm_model(lewm_cfg, action_dim=action_dim).to(device).eval()
     
     if cfg.lewm_ckpt:
-        checkpoint = torch.load(cfg.lewm_ckpt, map_location='cpu')
+        checkpoint = torch.load(cfg.lewm_ckpt, map_location='cpu', weights_only=False)
         if 'model' in checkpoint:
             wm.load_state_dict(checkpoint['model'])
         else:
@@ -157,7 +157,7 @@ def main(cfg: DittoConfig = None):
     else:
         wm, wm_iface = build_world_model(cfg, action_dim, device)
         
-        actor = TanhGaussianActor(
+        actor = GaussianActor(
             embed_dim=wm_iface.embed_dim,
             action_dim=action_dim,
             hidden=cfg.actor_hidden,
