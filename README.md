@@ -118,7 +118,7 @@ uv run examples/eval_pretrained.py \
 
 ## Results
 
-### Benchmark Comparison (TwoRoom, 50 eval episodes)
+### Benchmark Comparison in low data regime (100 training episodes, 50 eval episodes)
 
 Success rates comparison across three training methods with 3 different random seeds:
 
